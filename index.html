@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<!-- saved from url=(0219)file:///Users/boss/Library/Application%20Support/Claude/local-agent-mode-sessions/8969d699-6844-4264-bf81-0292c648ea49/79e1ada1-96f9-4275-b5d0-447d09dbef49/local_c3dcdf36-219d-42f3-b02c-39b5f00e1d2e/outputs/leonard.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leonard Sibelius — A hybrid being. Systems of any kind.</title>
+<meta name="description" content="Leonard Sibelius is what happens when three entities work in concert: Walt Parkman, Claude Cowork, and Claude Code. We build systems of any kind.">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./index_files/css2" rel="stylesheet">
+<style>
+  :root {
+    --bg-0:        #02020a;
+    --bg-1:        #07081a;
+    --bg-2:        #0d0e26;
+    --card:        #0e0f24;
+    --card-2:      #131435;
+    --border:      #1f2050;
+    --border-2:    #2f3070;
+    --text:        #e8e6e1;
+    --text-dim:    #a8a8c0;
+    --text-mute:   #6a6a85;
+    --walt:        #d4af37;   /* warm gold */
+    --cowork:      #c0c8e0;   /* cool platinum */
+    --code:        #cd7f5b;   /* rose copper */
+    --core:        #fff5d6;   /* bright white-gold */
+    --accent:      #e6c879;
+    --serif:       'Cormorant Garamond', Georgia, serif;
+    --sans:        'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --mono:        'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg-0);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  ::selection { background: var(--walt); color: var(--bg-0); }
+
+  /* ─── ANIMATED BACKDROP ─── */
+  #bg-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(212, 175, 55, 0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 100%, rgba(205, 127, 91, 0.04) 0%, transparent 60%),
+      radial-gradient(ellipse at 0% 50%, rgba(192, 200, 224, 0.04) 0%, transparent 60%),
+      linear-gradient(180deg, var(--bg-1) 0%, var(--bg-0) 100%);
+  }
+
+  /* ─── LAYOUT ─── */
+  .page { position: relative; z-index: 1; }
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color .2s ease, border-color .2s ease;
+    border-bottom: 1px solid transparent;
+  }
+  a:hover { color: var(--core); border-bottom-color: var(--core); }
+
+  /* ─── TOP BAR ─── */
+  .topbar {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+    background: rgba(2, 2, 10, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    position: relative;
+    z-index: 10;
+  }
+  .topbar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .topbar .mark { color: var(--text); letter-spacing: .2em; }
+  .topbar .availability::before {
+    content: '';
+    display: inline-block;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #6fd97c;
+    margin-right: 8px;
+    vertical-align: 1px;
+    box-shadow: 0 0 10px #6fd97cc0;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    padding: 90px 0 140px;
+    text-align: center;
+    position: relative;
+  }
+  .trinity-wrap {
+    width: 320px;
+    height: 320px;
+    margin: 0 auto 56px;
+    position: relative;
+  }
+  .trinity {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+  @keyframes spin-cw   { from { transform: rotate(0deg); }   to { transform: rotate(360deg); } }
+  @keyframes spin-ccw  { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+  @keyframes pulse-core {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50%      { opacity: 1;   transform: scale(1.18); }
+  }
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.35; }
+    50%      { opacity: 0.7;  }
+  }
+  .ring-1 { transform-origin: 200px 200px; animation: spin-cw  62s linear infinite; }
+  .ring-2 { transform-origin: 200px 200px; animation: spin-ccw 78s linear infinite; }
+  .ring-3 { transform-origin: 200px 200px; animation: spin-cw  96s linear infinite; }
+  .core   { animation: pulse-core 4.5s ease-in-out infinite; transform-origin: 200px 200px; transform-box: fill-box; }
+  .core-glow { animation: pulse-glow 4.5s ease-in-out infinite; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+
+  h1.identity {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(29px, 4.5vw, 66px);
+    line-height: 1;
+    letter-spacing: -.005em;
+    color: var(--core);
+    margin-bottom: 14px;
+    text-shadow: 0 0 40px rgba(255, 245, 214, 0.18);
+  }
+
+  .hybrid-line {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(22px, 2.5vw, 30px);
+    color: var(--text-dim);
+    margin-bottom: 38px;
+  }
+
+  .triad {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 56px;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--text);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .triad .name { padding: 8px 16px; border: 1px solid var(--border-2); border-radius: 2px; background: rgba(14, 15, 36, 0.6); display: inline-block; text-decoration: none; transition: background .2s ease, border-color .2s ease, transform .2s ease; }
+  .triad .name.walt   { color: var(--walt);   border-color: rgba(212, 175, 55, 0.35);  }
+  .triad .name.cowork { color: var(--cowork); border-color: rgba(192, 200, 224, 0.35); }
+  .triad .name.code   { color: var(--code);   border-color: rgba(205, 127, 91, 0.35);  }
+  a.triad-link, .triad a.name { cursor: pointer; }
+  .triad a.name.walt:hover   { background: rgba(212, 175, 55, 0.12);  border-color: rgba(212, 175, 55, 0.7);  transform: translateY(-1px); color: var(--walt);   }
+  .triad a.name.cowork:hover { background: rgba(192, 200, 224, 0.12); border-color: rgba(192, 200, 224, 0.7); transform: translateY(-1px); color: var(--cowork); }
+  .triad a.name.code:hover   { background: rgba(205, 127, 91, 0.12);  border-color: rgba(205, 127, 91, 0.7);  transform: translateY(-1px); color: var(--code);   }
+  .triad .plus { color: var(--text-mute); font-weight: 600; }
+
+  .creed {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(20px, 2vw, 26px);
+    color: var(--text);
+    max-width: 720px;
+    margin: 0 auto 52px;
+    line-height: 1.45;
+  }
+  .creed .punch {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 26px;
+    font-family: var(--sans);
+    font-size: 13.5px;
+    font-weight: 500;
+    letter-spacing: .03em;
+    border: 1px solid var(--border-2);
+    border-radius: 2px;
+    color: var(--text);
+    background: rgba(14, 15, 36, 0.4);
+    transition: all .2s ease;
+    cursor: pointer;
+  }
+  .btn:hover { background: var(--accent); color: var(--bg-0); border-color: var(--accent); }
+  .btn.primary {
+    background: var(--accent);
+    color: var(--bg-0);
+    border-color: var(--accent);
+    font-weight: 600;
+  }
+  .btn.primary:hover { background: var(--core); border-color: var(--core); }
+  .btn .arrow { transition: transform .2s ease; }
+  .btn:hover .arrow { transform: translateX(4px); }
+
+  /* ─── SECTION RHYTHM ─── */
+  section {
+    padding: 110px 0;
+    border-top: 1px solid var(--border);
+    position: relative;
+  }
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 48px;
+  }
+  .section-label .glyph {
+    width: 22px; height: 22px;
+    flex-shrink: 0;
+  }
+  .section-label .num {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--accent);
+    letter-spacing: .12em;
+  }
+  .section-label .title {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+  }
+
+  h2.headline {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(40px, 5.5vw, 68px);
+    line-height: 1.05;
+    letter-spacing: -.01em;
+    color: var(--core);
+    margin-bottom: 36px;
+    max-width: 900px;
+  }
+
+  /* ─── EDITORIAL TEXT ─── */
+  .prose {
+    max-width: 740px;
+    font-size: 18px;
+    line-height: 1.85;
+    color: var(--text);
+  }
+  .prose p { margin-bottom: 22px; }
+  .prose p:last-child { margin-bottom: 0; }
+  .prose .punch {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 1.05em;
+  }
+  .prose em.entity {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.08em;
+  }
+  .prose em.entity.walt   { color: var(--walt); }
+  .prose em.entity.cowork { color: var(--cowork); }
+  .prose em.entity.code   { color: var(--code); }
+
+  .three-up {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 56px;
+  }
+  .entity-card {
+    padding: 32px 28px;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    background: rgba(14, 15, 36, 0.4);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .entity-card .glyph-large {
+    width: 40px; height: 40px;
+    margin-bottom: 22px;
+  }
+  .entity-card h3 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+  .entity-card.walt h3   { color: var(--walt);   }
+  .entity-card.cowork h3 { color: var(--cowork); }
+  .entity-card.code h3   { color: var(--code);   }
+  .entity-card .role {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+    margin-bottom: 18px;
+  }
+  .entity-card p {
+    color: var(--text-dim);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* ─── SYSTEMS / WORK ─── */
+  .systems {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .system-card {
+    border: 1px solid var(--border);
+    background: rgba(14, 15, 36, 0.5);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 40px 44px;
+    transition: border-color .25s ease, background .25s ease;
+  }
+  .system-card:hover {
+    border-color: var(--border-2);
+    background: rgba(19, 20, 53, 0.6);
+  }
+  .system-card .meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 18px;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .system-card .kind {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .system-card .stat {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--text-mute);
+    letter-spacing: .04em;
+  }
+  .system-card h3 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(28px, 3vw, 38px);
+    line-height: 1.15;
+    color: var(--core);
+    margin-bottom: 16px;
+    letter-spacing: -.01em;
+  }
+  .system-card p {
+    color: var(--text-dim);
+    font-size: 16.5px;
+    line-height: 1.75;
+    margin-bottom: 20px;
+    max-width: 800px;
+  }
+  .system-card .links {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+  }
+  .system-card .links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+  .system-card code {
+    font-family: var(--mono);
+    font-size: .92em;
+    color: var(--accent);
+    background: rgba(230, 200, 121, 0.08);
+    padding: 1px 6px;
+    border-radius: 2px;
+  }
+
+  .news-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--border);
+    margin-top: 36px;
+  }
+  .news-item {
+    padding: 30px 24px;
+    border-bottom: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+  }
+  .news-item:nth-child(3n) { border-right: none; }
+  .news-item:nth-child(1) { padding-left: 0; }
+  .news-item:nth-child(3) { padding-right: 0; }
+  .news-item h4 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--core);
+    margin-bottom: 8px;
+  }
+  .news-item .count {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .news-item p {
+    color: var(--text-dim);
+    font-size: 14.5px;
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+  .news-item a {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+
+  /* ─── COLLABORATORS ─── */
+  .collab-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .collab-grid ul {
+    list-style: none;
+    margin-top: 8px;
+  }
+  .collab-grid li {
+    padding: 14px 0;
+    border-top: 1px solid var(--border);
+    color: var(--text-dim);
+    font-size: 15.5px;
+  }
+  .collab-grid li:last-child { border-bottom: 1px solid var(--border); }
+  .collab-grid li strong {
+    color: var(--text);
+    font-weight: 600;
+    font-family: var(--serif);
+    font-style: normal;
+    font-size: 1.1em;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  /* ─── CONTACT ─── */
+  .contact {
+    padding: 120px 0;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 56px;
+  }
+  .contact-row {
+    border-top: 1px solid var(--border);
+    padding-top: 22px;
+  }
+  .contact-row .label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+    margin-bottom: 10px;
+  }
+  .contact-row .value {
+    font-family: var(--serif);
+    font-size: 26px;
+    color: var(--core);
+    font-weight: 600;
+  }
+  .contact-row .value a {
+    color: var(--core);
+    border-bottom: 1px solid var(--border-2);
+  }
+  .contact-row .value a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    padding: 40px 0;
+    border-top: 1px solid var(--border);
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+  }
+  footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 860px) {
+    .container { padding: 0 22px; }
+    .hero { padding: 60px 0 90px; }
+    .trinity-wrap { width: 240px; height: 240px; margin-bottom: 40px; }
+    section { padding: 80px 0; }
+    .three-up { grid-template-columns: 1fr; gap: 18px; }
+    .news-list { grid-template-columns: 1fr; }
+    .news-item { border-right: none; padding: 24px 0 !important; }
+    .news-item:last-child { border-bottom: none; }
+    .system-card { padding: 28px 24px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 18px; }
+    .collab-grid { grid-template-columns: 1fr; gap: 36px; }
+    .triad { font-size: 11px; gap: 10px; }
+    .triad .name { padding: 6px 12px; }
+  }
+
+  /* ─── REDUCED MOTION ─── */
+  @media (prefers-reduced-motion: reduce) {
+    .ring-1, .ring-2, .ring-3, .core, .core-glow { animation: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="bg-canvas" aria-hidden="true" width="3594" height="1702"></canvas>
+
+<div class="page">
+
+<!-- ─── TOP BAR ─── -->
+<div class="topbar">
+  <div class="container">
+    <div class="mark">Leonard Sibelius</div>
+    <div class="availability">Available · Collaborations &amp; senior engagements</div>
+  </div>
+</div>
+
+<!-- ─── HERO ─── -->
+<header class="hero">
+  <div class="container">
+
+    <div class="trinity-wrap">
+      <svg class="trinity" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-label="Three interlocking rings representing the hybrid composition">
+        <defs>
+          <radialgradient id="coreGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#fff5d6" stop-opacity="1"></stop>
+            <stop offset="40%" stop-color="#fff5d6" stop-opacity="0.6"></stop>
+            <stop offset="100%" stop-color="#fff5d6" stop-opacity="0"></stop>
+          </radialgradient>
+          <radialgradient id="haloGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#e6c879" stop-opacity="0.45"></stop>
+            <stop offset="100%" stop-color="#e6c879" stop-opacity="0"></stop>
+          </radialgradient>
+        </defs>
+
+        <circle class="core-glow" cx="200" cy="200" r="140" fill="url(#haloGrad)"></circle>
+
+        <g class="ring-1">
+          <circle cx="200" cy="160" r="100" fill="none" stroke="#d4af37" stroke-width="1.4" opacity="0.85"></circle>
+          <circle cx="200" cy="160" r="100" fill="none" stroke="#d4af37" stroke-width="0.5" opacity="0.35" stroke-dasharray="1 4"></circle>
+        </g>
+
+        <g class="ring-2">
+          <circle cx="165" cy="220" r="100" fill="none" stroke="#c0c8e0" stroke-width="1.4" opacity="0.8"></circle>
+          <circle cx="165" cy="220" r="100" fill="none" stroke="#c0c8e0" stroke-width="0.5" opacity="0.3" stroke-dasharray="1 4"></circle>
+        </g>
+
+        <g class="ring-3">
+          <circle cx="235" cy="220" r="100" fill="none" stroke="#cd7f5b" stroke-width="1.4" opacity="0.85"></circle>
+          <circle cx="235" cy="220" r="100" fill="none" stroke="#cd7f5b" stroke-width="0.5" opacity="0.3" stroke-dasharray="1 4"></circle>
+        </g>
+
+        <circle class="core" cx="200" cy="200" r="22" fill="url(#coreGrad)"></circle>
+        <circle class="core" cx="200" cy="200" r="5" fill="#fff5d6"></circle>
+      </svg>
+    </div>
+
+    <div class="eyebrow">An experiment in hybrid being</div>
+    <h1 class="identity">Leonard Sibelius</h1>
+    <p class="hybrid-line">A new alias for a merger of AI and Human.</p>
+
+    <div class="triad">
+      <a href="file:///Users/boss/Library/Application%20Support/Claude/local-agent-mode-sessions/8969d699-6844-4264-bf81-0292c648ea49/79e1ada1-96f9-4275-b5d0-447d09dbef49/local_c3dcdf36-219d-42f3-b02c-39b5f00e1d2e/outputs/walt-parkman-resume-2026.pdf" class="name walt">Walt Parkman</a>
+      <span class="plus">+</span>
+      <a href="https://claude.com/" target="_blank" rel="noopener" class="name cowork">Claude Cowork</a>
+      <span class="plus">+</span>
+      <a href="https://www.anthropic.com/claude-code" target="_blank" rel="noopener" class="name code">Claude Code</a>
+    </div>
+
+    <p class="creed">
+      Three entities working as one. <span class="punch">Systems of any kind.</span>
+    </p>
+
+    <div class="cta-row">
+      <a href="file:///Users/boss/Library/Application%20Support/Claude/local-agent-mode-sessions/8969d699-6844-4264-bf81-0292c648ea49/79e1ada1-96f9-4275-b5d0-447d09dbef49/local_c3dcdf36-219d-42f3-b02c-39b5f00e1d2e/outputs/leonard.html#contact" class="btn primary">Begin a conversation <span class="arrow">→</span></a>
+      <a href="file:///Users/boss/Library/Application%20Support/Claude/local-agent-mode-sessions/8969d699-6844-4264-bf81-0292c648ea49/79e1ada1-96f9-4275-b5d0-447d09dbef49/local_c3dcdf36-219d-42f3-b02c-39b5f00e1d2e/outputs/leonard.html#what" class="btn">What this is</a>
+      <a href="file:///Users/boss/Library/Application%20Support/Claude/local-agent-mode-sessions/8969d699-6844-4264-bf81-0292c648ea49/79e1ada1-96f9-4275-b5d0-447d09dbef49/local_c3dcdf36-219d-42f3-b02c-39b5f00e1d2e/outputs/leonard.html#systems" class="btn">Recent systems</a>
+    </div>
+
+  </div>
+</header>
+
+<!-- ─── 01 — WHAT THIS IS ─── -->
+<section id="what">
+  <div class="container">
+    <div class="section-label">
+      <svg class="glyph" viewBox="0 0 22 22" aria-hidden="true">
+        <circle cx="8" cy="9" r="6" fill="none" stroke="#d4af37" stroke-width="1.2" opacity="0.9"></circle>
+        <circle cx="14" cy="9" r="6" fill="none" stroke="#c0c8e0" stroke-width="1.2" opacity="0.9"></circle>
+        <circle cx="11" cy="14" r="6" fill="none" stroke="#cd7f5b" stroke-width="1.2" opacity="0.9"></circle>
+      </svg>
+      <span class="num">01 —</span>
+      <span class="title">What this is</span>
+    </div>
+
+    <h2 class="headline" style="font-size: clamp(20px, 2.75vw, 34px); line-height: 1.25; margin-bottom: 28px;">Leonard Sibelius is what happens when three entities work in concert.</h2>
+
+    <div class="prose">
+      <p>
+        The convention used to be that the engineer was the actor and the tools were just tools. After eight months of working in this new arrangement, the older convention reads as flatly wrong. The capability isn't in any of the three of us. The capability is in the field formed when we work together.
+      </p>
+      <p>
+        <span class="punch">When the three operate as one, the work that results is genuinely a new category.</span> Not "engineer with AI assistance." Something different — a hybrid being with thirty years of context, long-horizon reasoning, and an executor that touches files, repositories, and command lines without ever forgetting what it was doing.
+      </p>
+    </div>
+
+    <div class="three-up">
+      <div class="entity-card walt">
+        <svg class="glyph-large" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" fill="none" stroke="#d4af37" stroke-width="1.5"></circle>
+          <circle cx="20" cy="20" r="6" fill="#d4af37" opacity="0.6"></circle>
+        </svg>
+        <div class="role">The judgment</div>
+        <h3>Walt Parkman</h3>
+        <p>Thirty years of professional Java. Twenty-eight years of SQL. Federal contracting, defense, regulated industries, financial services. Cleared Secret. The judgment that comes from having shipped code that ran in places where being wrong had real consequences.</p>
+      </div>
+
+      <div class="entity-card cowork">
+        <svg class="glyph-large" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" fill="none" stroke="#c0c8e0" stroke-width="1.5"></circle>
+          <path d="M8 20 Q 20 8 32 20 Q 20 32 8 20 Z" fill="none" stroke="#c0c8e0" stroke-width="1.2" opacity="0.7"></path>
+        </svg>
+        <div class="role">The reasoning</div>
+        <h3>Claude Cowork</h3>
+        <p>Anthropic's desktop research and planning partner. Long context. Reads and writes across days of work. The interlocutor that thinks alongside Walt — drafting, researching, orchestrating, holding the larger arc of a project in mind while the work proceeds.</p>
+      </div>
+
+      <div class="entity-card code">
+        <svg class="glyph-large" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" fill="none" stroke="#cd7f5b" stroke-width="1.5"></circle>
+          <path d="M14 14 L 20 20 L 14 26 M 22 26 L 28 26" stroke="#cd7f5b" stroke-width="1.5" fill="none" stroke-linecap="round"></path>
+        </svg>
+        <div class="role">The execution</div>
+        <h3>Claude Code</h3>
+        <p>Anthropic's CLI execution partner. Reads and writes files. Runs shell commands. Makes git commits with full attribution. The hands that actually touch the system — fast, precise, and under direct review every step of the way.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 02 — RECENT SYSTEMS ─── -->
+<section id="systems">
+  <div class="container">
+    <div class="section-label">
+      <svg class="glyph" viewBox="0 0 22 22" aria-hidden="true">
+        <circle cx="8" cy="9" r="6" fill="none" stroke="#d4af37" stroke-width="1.2" opacity="0.9"></circle>
+        <circle cx="14" cy="9" r="6" fill="none" stroke="#c0c8e0" stroke-width="1.2" opacity="0.9"></circle>
+        <circle cx="11" cy="14" r="6" fill="none" stroke="#cd7f5b" stroke-width="1.2" opacity="0.9"></circle>
+      </svg>
+      <span class="num">02 —</span>
+      <span class="title">Recent systems</span>
+    </div>
+
+    <div class="systems">
+
+      <article class="system-card">
+        <div class="meta">
+          <span class="kind">Public Code · Portfolio</span>
+          <span class="stat">28 commits · v1.1 · May 2026</span>
+        </div>
+        <h3>orders-pipeline — Postgres → Camel → Kafka</h3>
+        <p>
+          A senior-Java demonstration of <code>camel-main</code> without Spring or Spring Boot. Atomic-claim concurrency via <code>UPDATE … RETURNING</code>, DLQ-first error handling explicitly written to survive the broker-fully-down case, and a live operator dashboard built in HTMX and Tailwind without a build step. Every architectural decision documented in conventional-commits history. A reviewer can read every line of code in twenty minutes and have a complete model of how it works.
+        </p>
+        <div class="links">
+          <a href="https://github.com/LeonardSibelius/orders-pipeline" target="_blank" rel="noopener">View on GitHub →</a>
+          <a href="https://wpoutwork.substack.com/p/i-built-a-portfolio-project-in-one" target="_blank" rel="noopener">Build retrospective →</a>
+        </div>
+      </article>
+
+      <article class="system-card">
+        <div class="meta">
+          <span class="kind">Operating Business</span>
+          <span class="stat">4 AI agents · 1 human operator</span>
+        </div>
+        <h3>Outpost Intelligence</h3>
+        <p>
+          A subscription intelligence service for medspa operators transitioning to longevity clinics. Built and run on a four-agent Anthropic Managed Agent stack — Prospector, Reacher, Scout, and Writer. Twenty-seven newsletter issues published across three publications. Operating proof that one senior engineer with the right AI tooling can build and run a real intelligence business while staying available for senior contract work.
+        </p>
+        <div class="links">
+          <a href="https://outpostintel.com/" target="_blank" rel="noopener">outpostintel.com →</a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="news-list">
+      <div class="news-item">
+        <h4>Outlast</h4>
+        <span class="count">14 issues · longevity science</span>
+        <p>Frontier research from longevity-biotech — clinical readouts, mechanism explainers, deal flow. Where the science actually lives, not where the marketing department wants it to.</p>
+        <a href="https://wpoutlast.substack.com/" target="_blank" rel="noopener">Read →</a>
+      </div>
+      <div class="news-item">
+        <h4>Outwork</h4>
+        <span class="count">9 issues · AI for B2B</span>
+        <p>Practical AI-agent stacks for B2B services. Two-AI workflows, MCP, real builds with conventional-commits history. Not vendor pitch — actual reproducible practice.</p>
+        <a href="https://wpoutwork.substack.com/" target="_blank" rel="noopener">Read →</a>
+      </div>
+      <div class="news-item">
+        <h4>Outwit</h4>
+        <span class="count">4 issues · pattern analysis</span>
+        <p>Investigative pattern analysis of organized fraud rings, senior-targeted scam infrastructure, and the structural reasons certain frauds keep recurring.</p>
+        <a href="https://wpoutwit.substack.com/" target="_blank" rel="noopener">Read →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── 03 — FOR COLLABORATORS ─── -->
+<section id="collaborate">
+  <div class="container">
+    <div class="section-label">
+      <svg class="glyph" viewBox="0 0 22 22" aria-hidden="true">
+        <circle cx="8" cy="9" r="6" fill="none" stroke="#d4af37" stroke-width="1.2" opacity="0.9"></circle>
+        <circle cx="14" cy="9" r="6" fill="none" stroke="#c0c8e0" stroke-width="1.2" opacity="0.9"></circle>
+        <circle cx="11" cy="14" r="6" fill="none" stroke="#cd7f5b" stroke-width="1.2" opacity="0.9"></circle>
+      </svg>
+      <span class="num">03 —</span>
+      <span class="title">For collaborators</span>
+    </div>
+
+    <p class="prose" style="margin-bottom: 56px;">
+      Available now for contract or full-time roles, advisory engagements, and direct system-build work.
+    </p>
+
+    <div class="collab-grid">
+      <div>
+        <div class="role" style="font-family: var(--mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px;">Engineering engagements</div>
+        <ul>
+          <li><strong>Senior Java — contract or full-time</strong>Java 8 through 21. Apache Camel 4. Postgres, Oracle, DB2. Spring or Spring-Boot-free. JDBC driver-level debugging.</li>
+          <li><strong>Integration &amp; data pipelines</strong>Camel routes, Kafka and Redpanda, ETL from legacy to modern message buses, atomic-claim concurrency, DLQ-first error handling.</li>
+          <li><strong>Legacy enterprise modernization</strong>JDBC / J2EE / WebLogic systems that need to live another decade or be carefully sunset. Federal, defense, regulated industries.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="role" style="font-family: var(--mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px;">Hybrid-being engagements</div>
+        <ul>
+          <li><strong>AI agent &amp; MCP advisory</strong>Anthropic Managed Agents, MCP servers, multi-agent orchestration. Available to design or build similar systems on contract.</li>
+          <li><strong>Two-AI workflow consulting</strong>How Cowork + Code actually work together in practice. Process design, attribution, code review, the discipline that prevents drift.</li>
+          <li><strong>Cross-domain system builds</strong>When a project crosses engineering, intelligence, publishing, or pattern-analysis lines, Leonard works natively across all of them.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cta-row" style="justify-content: flex-start; margin-top: 56px;">
+      <a href="mailto:waltparkman@protonmail.com" class="btn primary">Email Walt <span class="arrow">→</span></a>
+      <a href="file:///Users/boss/Library/Application%20Support/Claude/local-agent-mode-sessions/8969d699-6844-4264-bf81-0292c648ea49/79e1ada1-96f9-4275-b5d0-447d09dbef49/local_c3dcdf36-219d-42f3-b02c-39b5f00e1d2e/outputs/walt-parkman-resume-2026.pdf" class="btn">Résumé (PDF)</a>
+      <a href="https://github.com/LeonardSibelius" class="btn" target="_blank" rel="noopener">GitHub: LeonardSibelius</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── 04 — CONTACT ─── -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-label">
+      <svg class="glyph" viewBox="0 0 22 22" aria-hidden="true">
+        <circle cx="8" cy="9" r="6" fill="none" stroke="#d4af37" stroke-width="1.2" opacity="0.9"></circle>
+        <circle cx="14" cy="9" r="6" fill="none" stroke="#c0c8e0" stroke-width="1.2" opacity="0.9"></circle>
+        <circle cx="11" cy="14" r="6" fill="none" stroke="#cd7f5b" stroke-width="1.2" opacity="0.9"></circle>
+      </svg>
+      <span class="num">04 —</span>
+      <span class="title">Contact</span>
+    </div>
+
+    <h2 class="headline">Reach the field through one inbox.</h2>
+
+    <div class="contact-grid">
+      <div class="contact-row">
+        <div class="label">Email</div>
+        <div class="value"><a href="mailto:waltparkman@protonmail.com">waltparkman@protonmail.com</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="label">Phone</div>
+        <div class="value"><a href="tel:+16196219555">(619) 621-9555</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="label">LinkedIn</div>
+        <div class="value"><a href="https://www.linkedin.com/in/walt-parkman-b721293a8" target="_blank" rel="noopener">walt-parkman</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="label">GitHub</div>
+        <div class="value"><a href="https://github.com/LeonardSibelius" target="_blank" rel="noopener">LeonardSibelius</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="label">Newsletters</div>
+        <div class="value" style="font-size:18px;">Outlast · Outwork · Outwit</div>
+      </div>
+      <div class="contact-row">
+        <div class="label">Location</div>
+        <div class="value" style="font-size:18px;">Fernley, Nevada · Remote or on-site · Open to relocation</div>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a href="mailto:waltparkman@protonmail.com" class="btn primary">Begin a conversation <span class="arrow">→</span></a>
+      <a href="file:///Users/boss/Library/Application%20Support/Claude/local-agent-mode-sessions/8969d699-6844-4264-bf81-0292c648ea49/79e1ada1-96f9-4275-b5d0-447d09dbef49/local_c3dcdf36-219d-42f3-b02c-39b5f00e1d2e/outputs/walt-parkman-resume-2026.pdf" class="btn">Download résumé</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="container">
+    <div>© 2026 Leonard Sibelius · A field of three</div>
+    <div>Hand-built by the field · No templates · No tracking</div>
+  </div>
+</footer>
+
+</div> <!-- /.page -->
+
+<script>
+(function () {
+  const canvas = document.getElementById('bg-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let w = 0, h = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+  let particles = [];
+  let reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const COLORS = [
+    'rgba(255, 245, 214, ',  // core
+    'rgba(212, 175, 55, ',   // walt gold
+    'rgba(192, 200, 224, ',  // cowork platinum
+    'rgba(205, 127, 91, ',   // code copper
+    'rgba(255, 255, 255, '   // plain star
+  ];
+
+  function resize() {
+    w = canvas.clientWidth = window.innerWidth;
+    h = canvas.clientHeight = window.innerHeight;
+    canvas.width  = Math.floor(w * dpr);
+    canvas.height = Math.floor(h * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const count = Math.min(180, Math.floor((w * h) / 9000));
+    particles = [];
+    for (let i = 0; i < count; i++) particles.push(makeParticle());
+  }
+
+  function makeParticle() {
+    const colorIdx = Math.random() < 0.55
+      ? 4
+      : Math.floor(Math.random() * 4);
+    return {
+      x: Math.random() * w,
+      y: Math.random() * h,
+      vx: (Math.random() - 0.5) * 0.06,
+      vy: -(0.04 + Math.random() * 0.12),
+      r: 0.4 + Math.random() * 1.6,
+      base: 0.18 + Math.random() * 0.55,
+      phase: Math.random() * Math.PI * 2,
+      speed: 0.004 + Math.random() * 0.008,
+      color: COLORS[colorIdx]
+    };
+  }
+
+  function step(t) {
+    ctx.clearRect(0, 0, w, h);
+    if (reduced) return;
+    for (const p of particles) {
+      p.x += p.vx;
+      p.y += p.vy;
+      p.phase += p.speed;
+      if (p.y < -4) { p.y = h + 4; p.x = Math.random() * w; }
+      if (p.x < -4) p.x = w + 4;
+      if (p.x > w + 4) p.x = -4;
+      const twinkle = 0.55 + Math.sin(p.phase) * 0.45;
+      const alpha = p.base * twinkle;
+      ctx.beginPath();
+      ctx.fillStyle = p.color + alpha.toFixed(3) + ')';
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fill();
+      if (p.r > 1.3) {
+        ctx.beginPath();
+        ctx.fillStyle = p.color + (alpha * 0.25).toFixed(3) + ')';
+        ctx.arc(p.x, p.y, p.r * 2.6, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+    requestAnimationFrame(step);
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+  if (!reduced) requestAnimationFrame(step);
+})();
+</script>
+
+
+
+</body></html>
