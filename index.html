@@ -188,6 +188,27 @@
   .triad a.name.code:hover   { background: rgba(205, 127, 91, 0.12);  border-color: rgba(205, 127, 91, 0.7);  transform: translateY(-1px); color: var(--code);   }
   .triad .plus { color: var(--text-mute); font-weight: 600; }
 
+  .hero-video {
+    display: block;
+    width: 100%;
+    max-width: 720px;
+    margin: 36px auto 44px;
+    border: 1px solid var(--border-2);
+    border-radius: 2px;
+    background: var(--bg-1);
+    box-shadow: 0 0 60px rgba(212, 175, 55, 0.18), 0 0 120px rgba(205, 127, 91, 0.08);
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-video video {
+    width: 100%;
+    display: block;
+    border-radius: 2px;
+  }
+  @media (max-width: 860px) {
+    .hero-video { margin: 24px auto 32px; }
+  }
+
   .creed {
     font-family: var(--serif);
     font-style: italic;
@@ -660,6 +681,13 @@
       <a href="https://claude.com" target="_blank" rel="noopener" class="name cowork">Claude Cowork</a>
       <span class="plus">+</span>
       <a href="https://www.anthropic.com/claude-code" target="_blank" rel="noopener" class="name code">Claude Code</a>
+    </div>
+
+    <div class="hero-video">
+      <video controls preload="metadata" poster="lennie-poster.jpg" playsinline aria-label="The birth of Leonard Sibelius — 15-second narrative video showing the transformation from solitary engineer to three-part entity">
+        <source src="Lennie.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
 
     <p class="creed">
