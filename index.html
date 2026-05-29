@@ -162,7 +162,34 @@
     font-weight: 400;
     font-size: clamp(22px, 2.5vw, 30px);
     color: var(--text-dim);
-    margin-bottom: 38px;
+    margin-bottom: 22px;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .game-tease { margin: 0 0 36px; }
+  .game-soon {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    padding: 12px 24px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--walt);
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    border-radius: 2px;
+    background: rgba(212, 175, 55, 0.06);
+    cursor: default;
+    user-select: none;
+  }
+  .game-soon .dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--walt);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.85);
+    animation: pulse-glow 2.4s ease-in-out infinite;
   }
 
   .triad {
@@ -385,6 +412,23 @@
     border-color: var(--border-2);
     background: rgba(19, 20, 53, 0.6);
   }
+  /* feature card — the predominant recent project */
+  .system-card.feature {
+    border-color: rgba(212, 175, 55, 0.45);
+    background: rgba(19, 20, 53, 0.62);
+    box-shadow: 0 0 50px rgba(212, 175, 55, 0.10), inset 0 0 0 1px rgba(212, 175, 55, 0.05);
+  }
+  .system-card.feature:hover {
+    border-color: rgba(212, 175, 55, 0.7);
+  }
+  .system-card .shot {
+    width: 100%;
+    display: block;
+    border: 1px solid var(--border-2);
+    border-radius: 2px;
+    margin: 4px 0 24px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.45);
+  }
   .system-card .meta {
     display: flex;
     justify-content: space-between;
@@ -415,12 +459,18 @@
     margin-bottom: 16px;
     letter-spacing: -.01em;
   }
+  .system-card.feature h3 { font-size: clamp(30px, 3.4vw, 44px); }
   .system-card p {
     color: var(--text-dim);
     font-size: 16.5px;
     line-height: 1.75;
     margin-bottom: 20px;
     max-width: 800px;
+  }
+  .system-card p em {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--accent);
   }
   .system-card .links {
     display: flex;
@@ -673,7 +723,11 @@
 
     <div class="eyebrow">An experiment in hybrid being</div>
     <h1 class="identity">Leonard Sibelius</h1>
-    <p class="hybrid-line">A new alias for a merger of AI and Human.</p>
+    <p class="hybrid-line">The Engineer Who Built Himself — a video game about becoming more than the biology you were handed.</p>
+
+    <div class="game-tease">
+      <span class="game-soon" role="text" aria-label="The game is coming soon"><span class="dot" aria-hidden="true"></span>The game · Coming soon</span>
+    </div>
 
     <div class="triad">
       <a href="walt-parkman-resume-5-2026.pdf" class="name walt">Walt Parkman</a>
@@ -776,6 +830,25 @@
 
     <div class="systems">
 
+      <article class="system-card feature">
+        <div class="meta">
+          <span class="kind">Game · Unreal Engine 5.7 · The namesake</span>
+          <span class="stat">v0.2 · CP1 shipped · May 2026</span>
+        </div>
+        <h3>Leonard Sibelius: The Engineer Who Built Himself</h3>
+        <img class="shot" src="sibelius-game-cp1.jpg" alt="Chapter 1 of the Sibelius Game — a realistic engineer's home office rendered in Unreal Engine 5.7, with desk, monitor, corkboard, and warm daylight from the window.">
+        <p>
+          The narrative game this whole site is named after — now a thing you can walk around in. A seventy-year-old engineer builds himself into something larger by merging with the tools that think alongside him, dismantling an antagonist named Mrs. Hall — the <em>opaque no</em>, the system that refuses you without diagnostics — across a seven-power progression that ends in a sunlit cathedral: <em>"Together we are called Leonard Sibelius. We dominate code."</em>
+        </p>
+        <p>
+          Checkpoint 1 shipped May 2026: a realistic ~1,074-actor home office adopted from licensed QuadArt assets, walkable in first person, verified green by a headless smoke-test commandlet. Built the way this whole field works — Cowork planning and writing the code, Code compiling and committing in PowerShell, Walt steering — from a fresh machine to a tagged public release in a single sitting.
+        </p>
+        <div class="links">
+          <a href="https://github.com/LeonardSibelius/sibelius-game" target="_blank" rel="noopener">View on GitHub →</a>
+          <a href="https://wpoutwork.substack.com/p/the-engineer-who-built-himself" target="_blank" rel="noopener">The story →</a>
+        </div>
+      </article>
+
       <article class="system-card">
         <div class="meta">
           <span class="kind">Public Code · Portfolio</span>
@@ -783,7 +856,7 @@
         </div>
         <h3>leonsheet — A working Excel clone, vibe-coded in 3 hours</h3>
         <p>
-          A 26×100 grid spreadsheet with a hand-written formula language (tokenizer, recursive-descent parser, evaluator), a dependency-graph recalc engine with Kahn's topological sort and cycle detection, SQLite persistence with WAL-mode write safety, and CSV import/export. Seven supported functions: <code>SUM</code>, <code>AVERAGE</code>, <code>MIN</code>, <code>MAX</code>, <code>COUNT</code>, <code>IF</code>, <code>CONCAT</code>. 245 passing tests, full suite in 1.06 seconds. Seventeen bugs predicted before the first commit and proven absent by seventeen named tests. The hybrid-being workflow at its sharpest.
+          A 26×100 grid spreadsheet with a hand-written formula language (tokenizer, recursive-descent parser, evaluator), a dependency-graph recalc engine with Kahn's topological sort and cycle detection, and SQLite persistence with CSV import/export. 245 passing tests in 1.06 seconds — and seventeen bugs predicted before the first commit, proven absent by seventeen named tests. The hybrid-being workflow at its sharpest.
         </p>
         <div class="links">
           <a href="https://github.com/LeonardSibelius/leonsheet" target="_blank" rel="noopener">View on GitHub →</a>
@@ -798,7 +871,7 @@
         </div>
         <h3>orders-pipeline — Postgres → Camel → Kafka</h3>
         <p>
-          A senior-Java demonstration of <code>camel-main</code> without Spring or Spring Boot. Atomic-claim concurrency via <code>UPDATE … RETURNING</code>, DLQ-first error handling explicitly written to survive the broker-fully-down case, and a live operator dashboard built in HTMX and Tailwind without a build step. Every architectural decision documented in conventional-commits history. A reviewer can read every line of code in twenty minutes and have a complete model of how it works.
+          A senior-Java demonstration of <code>camel-main</code> with no Spring on the classpath: atomic-claim concurrency via <code>UPDATE … RETURNING</code>, DLQ-first error handling built to survive the broker-fully-down case, and a live HTMX + Tailwind operator dashboard with no build step. Every architectural decision documented in conventional-commits history — readable end-to-end in twenty minutes.
         </p>
         <div class="links">
           <a href="https://github.com/LeonardSibelius/orders-pipeline" target="_blank" rel="noopener">View on GitHub →</a>
@@ -813,7 +886,7 @@
         </div>
         <h3>Outpost Intelligence</h3>
         <p>
-          A subscription intelligence service for medspa operators transitioning to longevity clinics. Built and run on a four-agent Anthropic Managed Agent stack — Prospector, Reacher, Scout, and Writer. Twenty-seven newsletter issues published across three publications. Operating proof that one senior engineer with the right AI tooling can build and run a real intelligence business while staying available for senior contract work.
+          A subscription intelligence service for medspa operators transitioning to longevity clinics, built and run on a four-agent Anthropic Managed Agent stack — Prospector, Reacher, Scout, and Writer. Thirty-three newsletter issues published across three publications. Operating proof that one senior engineer with the right AI tooling can build and run a real intelligence business while staying available for senior contract work.
         </p>
         <div class="links">
           <a href="https://outpostintel.com" target="_blank" rel="noopener">outpostintel.com →</a>
@@ -825,13 +898,13 @@
     <div class="news-list">
       <div class="news-item">
         <h4>Outlast</h4>
-        <span class="count">14 issues · longevity science</span>
+        <span class="count">16 issues · longevity science</span>
         <p>Frontier research from longevity-biotech — clinical readouts, mechanism explainers, deal flow. Where the science actually lives, not where the marketing department wants it to.</p>
         <a href="https://wpoutlast.substack.com" target="_blank" rel="noopener">Read →</a>
       </div>
       <div class="news-item">
         <h4>Outwork</h4>
-        <span class="count">10 issues · AI for B2B</span>
+        <span class="count">13 issues · AI for B2B</span>
         <p>Practical AI-agent stacks for B2B services. Two-AI workflows, MCP, real builds with conventional-commits history. Not vendor pitch — actual reproducible practice.</p>
         <a href="https://wpoutwork.substack.com" target="_blank" rel="noopener">Read →</a>
       </div>
