@@ -182,14 +182,24 @@
     border: 1px solid rgba(212, 175, 55, 0.45);
     border-radius: 2px;
     background: rgba(212, 175, 55, 0.06);
-    cursor: default;
-    user-select: none;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .game-soon:hover {
+    background: var(--walt);
+    color: var(--bg-0);
+    border-color: var(--walt);
   }
   .game-soon .dot {
     width: 7px; height: 7px; border-radius: 50%;
     background: var(--walt);
     box-shadow: 0 0 10px rgba(212, 175, 55, 0.85);
     animation: pulse-glow 2.4s ease-in-out infinite;
+  }
+  .game-soon:hover .dot {
+    background: var(--bg-0);
+    box-shadow: none;
   }
 
   .triad {
@@ -729,7 +739,7 @@
     <p class="hybrid-line">The Engineer Who Built Himself — a video game about becoming more than the biology you were handed.</p>
 
     <div class="game-tease">
-      <span class="game-soon" role="text" aria-label="The game is coming soon"><span class="dot" aria-hidden="true"></span>The game · Coming soon</span>
+      <a class="game-soon" href="#game" aria-label="See the game in motion — jump to the gameplay video"><span class="dot" aria-hidden="true"></span>See it in motion →</a>
     </div>
 
     <div class="triad">
@@ -833,7 +843,7 @@
 
     <div class="systems">
 
-      <article class="system-card feature">
+      <article class="system-card feature" id="game">
         <div class="meta">
           <span class="kind">Game · Unreal Engine 5.7 · The namesake</span>
           <span class="stat">v0.2 · CP1 shipped · May 2026</span>
