@@ -651,6 +651,27 @@
   @media (prefers-reduced-motion: reduce) {
     .ring-1, .ring-2, .ring-3, .core, .core-glow { animation: none !important; }
   }
+
+  /* ─── JOURNAL MODAL ─── */
+  .journal-overlay{ position:fixed; inset:0; z-index:100; display:flex; align-items:center; justify-content:center; padding:24px; background:rgba(2,2,10,.86); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); }
+  .journal-overlay[hidden]{ display:none; }
+  .journal-box{ position:relative; width:100%; max-width:760px; max-height:84vh; overflow-y:auto; background:linear-gradient(180deg,var(--card-2),var(--card)); border:1px solid var(--border-2); border-radius:3px; padding:54px 56px; box-shadow:0 0 80px rgba(212,175,55,.14), 0 30px 80px rgba(0,0,0,.6); }
+  .journal-close{ position:absolute; top:12px; right:18px; background:none; border:none; color:var(--text-mute); font-size:30px; line-height:1; cursor:pointer; font-family:var(--sans); transition:color .2s ease; }
+  .journal-close:hover{ color:var(--core); }
+  .journal-content{ font-family:var(--sans); color:var(--text-dim); font-size:16px; line-height:1.8; }
+  .journal-content h2{ font-family:var(--serif); font-weight:600; font-size:32px; color:var(--core); margin:0 0 18px; letter-spacing:-.01em; }
+  .journal-content h3{ font-family:var(--serif); font-weight:600; font-size:23px; color:var(--accent); margin:30px 0 12px; }
+  .journal-content h4{ font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--text-mute); margin:24px 0 10px; }
+  .journal-content p{ margin:0 0 16px; }
+  .journal-content strong{ color:var(--text); font-weight:600; }
+  .journal-content em{ font-style:italic; }
+  .journal-content a{ color:var(--accent); }
+  .journal-content blockquote{ margin:18px 0; padding:8px 20px; border-left:2px solid var(--accent); color:var(--text); font-family:var(--serif); font-style:italic; font-size:18px; line-height:1.5; }
+  .journal-content ul{ margin:0 0 16px; padding-left:22px; }
+  .journal-content li{ margin:6px 0; }
+  .journal-content hr{ border:none; border-top:1px solid var(--border); margin:28px 0; }
+  .journal-loading{ color:var(--text-mute); font-style:italic; }
+  @media (max-width:860px){ .journal-box{ padding:40px 26px; } }
 </style>
 </head>
 <body>
@@ -861,6 +882,7 @@
         </div>
         <div class="video-caption">▶ See it in motion — early gameplay, work in progress</div>
         <div class="links">
+          <a href="#journal" class="js-journal-open">The Journal →</a>
           <a href="https://youtu.be/75b_7juE_cY" target="_blank" rel="noopener">See it in motion →</a>
           <a href="https://github.com/LeonardSibelius/sibelius-game" target="_blank" rel="noopener">View on GitHub →</a>
           <a href="https://wpoutwork.substack.com/p/the-engineer-who-built-himself" target="_blank" rel="noopener">The story →</a>
@@ -1040,6 +1062,15 @@
   </div>
 </footer>
 
+<div class="journal-overlay" id="journal" hidden>
+  <div class="journal-box" role="dialog" aria-modal="true" aria-label="Leonard Sibelius — Journal">
+    <button class="journal-close" type="button" aria-label="Close journal">&times;</button>
+    <div class="journal-content" id="journal-content">
+      <p class="journal-loading">Opening the journal&hellip;</p>
+    </div>
+  </div>
+</div>
+
 </div> <!-- /.page -->
 
 <script>
@@ -1116,6 +1147,55 @@
   window.addEventListener('resize', resize);
   resize();
   if (!reduced) requestAnimationFrame(step);
+})();
+</script>
+
+<script>
+(function () {
+  const overlay = document.getElementById('journal');
+  if (!overlay) return;
+  const content = document.getElementById('journal-content');
+  let loaded = false;
+
+  function mdToHtml(md){
+    const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const inline = s => esc(s)
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>')
+      .replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>')
+      .replace(/(^|[^*])\*([^*]+)\*/g,'$1<em>$2</em>');
+    const lines = md.replace(/\r\n/g,'\n').split('\n');
+    let html='', para=[], list=[];
+    const flushP=()=>{ if(para.length){ html+='<p>'+inline(para.join(' '))+'</p>'; para=[]; } };
+    const flushL=()=>{ if(list.length){ html+='<ul>'+list.map(li=>'<li>'+inline(li)+'</li>').join('')+'</ul>'; list=[]; } };
+    const flush=()=>{ flushP(); flushL(); };
+    for (let raw of lines){
+      const line = raw.trim(); let m;
+      if(!line){ flush(); continue; }
+      if(/^---+$/.test(line)){ flush(); html+='<hr>'; continue; }
+      if(m=line.match(/^###\s+(.*)/)){ flush(); html+='<h4>'+inline(m[1])+'</h4>'; continue; }
+      if(m=line.match(/^##\s+(.*)/)){ flush(); html+='<h3>'+inline(m[1])+'</h3>'; continue; }
+      if(m=line.match(/^#\s+(.*)/)){ flush(); html+='<h2>'+inline(m[1])+'</h2>'; continue; }
+      if(m=line.match(/^>\s?(.*)/)){ flush(); html+='<blockquote>'+inline(m[1])+'</blockquote>'; continue; }
+      if(m=line.match(/^[-*]\s+(.*)/)){ flushP(); list.push(m[1]); continue; }
+      flushL(); para.push(line);
+    }
+    flush(); return html;
+  }
+
+  function open(e){ if(e) e.preventDefault(); overlay.hidden=false; document.body.style.overflow='hidden';
+    if(!loaded){
+      fetch('NARRATIVE.md',{cache:'no-cache'})
+        .then(r=>{ if(!r.ok) throw new Error(r.status); return r.text(); })
+        .then(t=>{ content.innerHTML = mdToHtml(t); loaded=true; })
+        .catch(()=>{ content.innerHTML='<p class="journal-loading">The journal could not be opened just now.</p>'; });
+    }
+  }
+  function close(){ overlay.hidden=true; document.body.style.overflow=''; }
+
+  document.querySelectorAll('.js-journal-open').forEach(a=>a.addEventListener('click', open));
+  overlay.addEventListener('click', e=>{ if(e.target===overlay) close(); });
+  overlay.querySelector('.journal-close').addEventListener('click', close);
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape' && !overlay.hidden) close(); });
 })();
 </script>
 
