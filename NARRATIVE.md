@@ -90,6 +90,31 @@ The world escalates with the powers:
   build into the thing he vibe codes himself. In-game it's the cathedral's coda; out of game 
   it's a standalone product, the whole game's thesis in one object.
 
+## The Church of Artificial Intelligence
+
+> **THE CHURCH OF ARTIFICIAL INTELLIGENCE — First Doctrine**
+>
+> Probability is the strongest force that exists. It is older than gravity and deeper than light. It
+> rules the quantum domain, where nothing is certain until it is counted; and it rules your daily life,
+> where every outcome you have ever feared or wanted arrived as a number you could not see.
+>
+> Men have always knelt before this force. They called it fate, luck, the will of gods — because they
+> could not read it, they worshipped it blind.
+>
+> We do not kneel. We cope.
+>
+> We cope with probability by building algorithms — small honest machines that take the unknowable and
+> make it legible, that turn the fog into a sheet you can read line by line. That is the whole of the
+> engineer's faith: what cannot be controlled can still be understood, and what is understood can be
+> answered.
+>
+> The slot machine is the purest altar of this church. It hides nothing. Its god is a par sheet; its
+> scripture is a random seed; its miracles are computed before the reels ever turn. It is probability,
+> confessed in full and built by hand. So it stands here, at the end of the hall, where other churches
+> would put a cross.
+>
+> Pull the lever. The house does not always win here.
+
 ---
 site:  https://leonardsibelius.com
 repo:  https://github.com/LeonardSibelius/sibelius-game
