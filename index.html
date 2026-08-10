@@ -899,44 +899,14 @@
       <article class="system-card">
         <div class="meta">
           <span class="kind">Public Code · Portfolio</span>
-          <span class="stat">12 commits · v1.0 · May 2026</span>
+          <span class="stat">63 commits · Aug 2026</span>
         </div>
-        <h3>leonsheet — A working Excel clone, vibe-coded in 3 hours</h3>
+        <h3>scan-ingest — RMF continuous-monitoring pipeline in C# and Postgres</h3>
         <p>
-          A 26×100 grid spreadsheet with a hand-written formula language (tokenizer, recursive-descent parser, evaluator), a dependency-graph recalc engine with Kahn's topological sort and cycle detection, and SQLite persistence with CSV import/export. 245 passing tests in 1.06 seconds — and seventeen bugs predicted before the first commit, proven absent by seventeen named tests. The hybrid-being workflow at its sharpest.
+          A pipeline that ingests vulnerability-scanner findings and a compliance-control assessment, then reports where the two disagree — the core function of federal RMF continuous-monitoring tooling. Six weekly Nessus-style scans land as raw <code>jsonb</code> and normalize into a month-partitioned fact table; each scan reconciles a POA&amp;M register that opens, closes, and reopens commitments carrying an owner, a deadline, and a rough-order-of-magnitude effort estimate; and a correlation engine compares the scanner against a synthetic eMASS control export to surface five verdicts — including the one that matters, a control marked <em>compliant</em> that live scan evidence <em>contradicts</em>. Idempotent by deterministic key rather than conflict clause, all report SQL held in one runnable file, thirteen passing tests.
         </p>
         <div class="links">
-          <a href="https://github.com/LeonardSibelius/leonsheet" target="_blank" rel="noopener">View on GitHub →</a>
-          <a href="https://wpoutwork.substack.com/p/building-leonsheet-the-engineering" target="_blank" rel="noopener">Build retrospective →</a>
-        </div>
-      </article>
-
-      <article class="system-card">
-        <div class="meta">
-          <span class="kind">Public Code · Portfolio</span>
-          <span class="stat">35 commits · v1.3 · May 2026</span>
-        </div>
-        <h3>orders-pipeline — Postgres → Camel → Kafka</h3>
-        <p>
-          A senior-Java demonstration of <code>camel-main</code> with no Spring on the classpath: atomic-claim concurrency via <code>UPDATE … RETURNING</code>, DLQ-first error handling built to survive the broker-fully-down case, and a live HTMX + Tailwind operator dashboard with no build step. Every architectural decision documented in conventional-commits history — readable end-to-end in twenty minutes.
-        </p>
-        <div class="links">
-          <a href="https://github.com/LeonardSibelius/orders-pipeline" target="_blank" rel="noopener">View on GitHub →</a>
-          <a href="https://wpoutwork.substack.com/p/i-built-a-portfolio-project-in-one" target="_blank" rel="noopener">Build retrospective →</a>
-        </div>
-      </article>
-
-      <article class="system-card">
-        <div class="meta">
-          <span class="kind">Operating Business</span>
-          <span class="stat">4 AI agents · 1 human operator</span>
-        </div>
-        <h3>Outpost Intelligence</h3>
-        <p>
-          A subscription intelligence service for medspa operators transitioning to longevity clinics, built and run on a four-agent Anthropic Managed Agent stack — Prospector, Reacher, Scout, and Writer. Thirty-three newsletter issues published across three publications. Operating proof that one senior engineer with the right AI tooling can build and run a real intelligence business while staying available for senior contract work.
-        </p>
-        <div class="links">
-          <a href="https://outpostintel.com" target="_blank" rel="noopener">outpostintel.com →</a>
+          <a href="https://github.com/LeonardSibelius/scan-ingest" target="_blank" rel="noopener">View on GitHub →</a>
         </div>
       </article>
 
@@ -948,18 +918,6 @@
         <span class="count">16 issues · longevity science</span>
         <p>Frontier research from longevity-biotech — clinical readouts, mechanism explainers, deal flow. Where the science actually lives, not where the marketing department wants it to.</p>
         <a href="https://wpoutlast.substack.com" target="_blank" rel="noopener">Read →</a>
-      </div>
-      <div class="news-item">
-        <h4>Outwork</h4>
-        <span class="count">13 issues · AI for B2B</span>
-        <p>Practical AI-agent stacks for B2B services. Two-AI workflows, MCP, real builds with conventional-commits history. Not vendor pitch — actual reproducible practice.</p>
-        <a href="https://wpoutwork.substack.com" target="_blank" rel="noopener">Read →</a>
-      </div>
-      <div class="news-item">
-        <h4>Outwit</h4>
-        <span class="count">4 issues · pattern analysis</span>
-        <p>Investigative pattern analysis of organized fraud rings, senior-targeted scam infrastructure, and the structural reasons certain frauds keep recurring.</p>
-        <a href="https://wpoutwit.substack.com" target="_blank" rel="noopener">Read →</a>
       </div>
     </div>
 
@@ -1045,7 +1003,7 @@
       </div>
       <div class="contact-row">
         <div class="label">Newsletters</div>
-        <div class="value" style="font-size:18px;">Outlast · Outwork · Outwit</div>
+        <div class="value" style="font-size:18px;">Outlast</div>
       </div>
       <div class="contact-row">
         <div class="label">Location</div>
