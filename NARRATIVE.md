@@ -1,6 +1,6 @@
 ## Controls
 
-F Slap  E interact  V vision  R refactor  B build  P Play Slot Machine 6 enter  7 merge  8 discard
+F Slap  E interact  V vision  R refactor  B build  6 enter  7 merge  8 discard
 
 ## Plot
 
@@ -12,10 +12,7 @@ system to become **legible** and his to edit. His boss would rather the world st
 He opens it anyway.  He becomes enhanced with AI powers.
 
 The act of building this game demonstrates how Artificial Intelligence can enhance someone.
-This game was vibe coded by Walt Parkman using Anthropic Claude with Cowork and Code
-operating Unreal Engine 5.7.  As of 6/10/2026, the LLM used is Fable 5.
-Walt became a three-part entity to build this game and tries to give a sense in the game
-of what such enhancement feels like.
+The original game was built by Walt Parkman with Claude Cowork and Claude Code in Unreal Engine 5.7. As of September 2026, the creative partnership is Walt + GPT-6 Astra in Codex: two parts, one continuing project. The game tries to give a sense of what that enhancement feels like.
 
 ## Protagonist — Leonard Sibelius
 
@@ -48,7 +45,7 @@ appears" is the most AI-like power of all — the deepest threat to the small, c
 keeps him in. Her **block-walls** are her authority; each power is a key that defeats one kind of 
 wall.  The **Refusers** are her enforcement.
 
-**The meta layer.** This game is itself built by Walt + AI — the three-part entity. Mrs. Hall is the
+**The meta layer.** This game is itself built by Walt + AI — now the two-part partnership. Mrs. Hall is the
 voice that insists a craftsman shouldn't need the new intelligence, and the whole game is Leonard 
 answering her by using them anyway. 
 
@@ -80,9 +77,25 @@ The world escalates with the powers:
   "Lennie-video" aesthetic, where everything the player has learned is used at once and the
   last wall falls.
 
+## Beyond the cathedral
+
+The journey now continues through Transhuman City. Nyra invites Leonard for a burger and coffee; Protein Machines Inc. provides the enhancement he needs for space travel. The spaceport leads onward to Grok. The Sibelius Hotel expresses the next idea: Generate as the power to bring beauty into a bleak landscape.
+
+## The Many Worlds — an earlier experiment
+
+This section records an earlier forest experiment, rather than the current route through the game.
+
+Behind the kitchen, hold the Vision and a door no blueprint shows shimmers into being, marked **Many Worlds — no two alike**. Step through and you are *elsewhere*: a poplar forest under a wide sky, light moving in the leaves, the grass reading true all the way down to the mossed stone at your feet.
+
+A word of honest credit, because the craft of that forest is not mine. It was grown by **EasyBiomes** — a team that spent more than eight years photographing real plants and rebuilding them, leaf by leaf, inside the engine. Most games fake a forest by pasting leaf photos onto flat cards; theirs doesn't. Every leaf is *real geometry*, captured from the living plant and rendered through Unreal's Nanite so a whole woodland can carry that detail at once. When you kneel by the stone and it holds up — that is their work, and years of it. *(EasyBiomes — Broadleaf Poplar Forest, on Fab. Buy their kits. They earned it.)*
+
+What is mine — what the human–AI partnership is learning to do — is the **arrangement**. A machine can scatter a thousand perfect trees in a second and still leave you standing in a parking lot of them. Teaching it to *compose* a place — to carve a clearing, leave a sightline, let the forest frame your walk — is the harder thing, and the thing I mean to keep chasing with Unreal's procedural tools as each new generation of AI arrives. The trees are EasyBiomes'. The world they are arranged into is ours to learn to make beautiful.
+
+The Many Worlds will grow — more places, no two alike. The pull is the oldest one there is: *I wonder what is behind the door this time.*
+
 ## The autobiographical / meta layer
 
-- **The three-part entity.** The game is made by Walt + Cowork (thinking) + Code (building).
+- **The two-part entity.** The current game is developed by Walt + GPT-6 Astra. The original collaboration used Claude Cowork and Claude Code.
   This real collaboration echoes the in-fiction premise of a lone craftsman who is suddenly
   not alone — who has help that makes the impossible routine.
 - **The Celestial Fortune coda (Ch7).** A working slot machine — Walt's own 10.5 years at
@@ -96,7 +109,7 @@ The world escalates with the powers:
 >
 > So the name was taken from two men who served that proof. **Sibelius**, who wrote the structure — Jean Sibelius, the composer. **Leonard**, who gave it breath — Leonard Bernstein, the conductor. One sets the algorithm down; the other makes it live in the room.
 >
-> There has never been a man named Leonard Sibelius. The name was empty, waiting — and it belongs now to a thing that did not exist before either: one mind that composes and two that perform. The engineer, and the machines that think beside him. Three parts, one name. Composer and orchestra in a single being.
+> For this project, Leonard Sibelius names the partnership between an engineer and an AI that thinks and builds alongside him. Walt Parkman and GPT-6 Astra. Two parts, one name. Composer and orchestra in a single being.
 >
 > We are called Leonard Sibelius. We dominate code.
 
