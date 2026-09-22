@@ -1,0 +1,7 @@
+# Never let line-ending conversion touch binary files.
+*.pdf  binary
+*.docx binary
+*.jpg  binary
+*.jpeg binary
+*.png  binary
+*.mp4  binary
