@@ -12,7 +12,7 @@ system to become **legible** and his to edit. His boss would rather the world st
 He opens it anyway.  He becomes enhanced with AI powers.
 
 The act of building this game demonstrates how Artificial Intelligence can enhance someone.
-The original game was built by Walt Parkman with Claude Cowork and Claude Code in Unreal Engine 5.7. As of September 2026, the creative partnership is Walt + GPT-6 Astra in Codex: two parts, one continuing project. The game tries to give a sense of what that enhancement feels like.
+The original game was built by Walt Parkman with Claude Cowork and Claude Code in Unreal Engine 5.7. As of September 2026, the creative partnership is Walt + Claude Opus 5.5 in Claude Code: two parts, one continuing project. The game tries to give a sense of what that enhancement feels like.
 
 ## Protagonist — Leonard Sibelius
 
@@ -95,7 +95,7 @@ The Many Worlds will grow — more places, no two alike. The pull is the oldest 
 
 ## The autobiographical / meta layer
 
-- **The two-part entity.** The current game is developed by Walt + GPT-6 Astra. The original collaboration used Claude Cowork and Claude Code.
+- **The two-part entity.** The current game is developed by Walt + Claude Opus 5.5. The original collaboration used Claude Cowork and Claude Code.
   This real collaboration echoes the in-fiction premise of a lone craftsman who is suddenly
   not alone — who has help that makes the impossible routine.
 - **The Celestial Fortune coda (Ch7).** A working slot machine — Walt's own 10.5 years at
@@ -109,7 +109,7 @@ The Many Worlds will grow — more places, no two alike. The pull is the oldest 
 >
 > So the name was taken from two men who served that proof. **Sibelius**, who wrote the structure — Jean Sibelius, the composer. **Leonard**, who gave it breath — Leonard Bernstein, the conductor. One sets the algorithm down; the other makes it live in the room.
 >
-> For this project, Leonard Sibelius names the partnership between an engineer and an AI that thinks and builds alongside him. Walt Parkman and GPT-6 Astra. Two parts, one name. Composer and orchestra in a single being.
+> For this project, Leonard Sibelius names the partnership between an engineer and an AI that thinks and builds alongside him. Walt Parkman and Claude Opus 5.5. Two parts, one name. Composer and orchestra in a single being.
 >
 > We are called Leonard Sibelius. We dominate code.
 
